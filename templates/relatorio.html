@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="static/css/estilo.css">
+    <link rel="icon" type="image/x-icon" href="static\css\icon.png">
+</head>
+
+<body>
+<br>
+<a type="button" href="cadastro_candidato" class="btn btn-success btn-lg float-left">Página de Cadastro de
+    Candidato</a>
+
+<div class="form-body">
+    <div class="form-table">
+        <div class="form-content">
+            <div class="form-items">
+                <h3>Relatório com o Resultado da eleição</h3>
+                <table class="table bg-dark text-white" style="max-width:1000px">
+                    <thead>
+                    <tr>
+                        <th scope="col">Posicao</th>
+                        <th scope="col">Nome do Candidato</th>
+                        <th scope="col">Partido</th>
+                        <th scope="col">Número</th>
+                        <th scope="col">Quantidade de Votos</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {%for voto in votos%}
+                    <tr>
+                        <td>{{loop.index}}</td>
+                        <td>{{voto[1]}}</td>
+                        <td>{{voto[2]}}</td>
+                        <td>{{voto[3]}}</td>
+                        <td>{{voto[0]}}</td>
+                    </tr>
+                    {%endfor%}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
